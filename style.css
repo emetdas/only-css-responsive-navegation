@@ -30,6 +30,15 @@ body{
         background: #303030;
         color: #fff;
     }
+    samp{
+        position: absolute;
+        float: right;
+        top: 0;
+        right: 1rem;
+        width: 2rem;
+        height: 0.5rem;
+        overflow: hidden;
+    }
     .navegation input[type="checkbox"]{
         display: block;
         width: 2rem;
@@ -39,7 +48,7 @@ body{
         cursor: pointer;
     }
     .navegation input[type="checkbox"]:checked ~ .manue{
-        display: block;
+        opacity: 1;
     }
     .navegation input[type="checkbox"]:checked ~ .one{
         transform: rotate(45deg);
@@ -47,17 +56,19 @@ body{
         -moz-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
         -o-transform: rotate(45deg);
+        top: 0.25rem;
     }
     .navegation input[type="checkbox"]:checked ~ .three{    
-        display: none;
-    }
-    .navegation input[type="checkbox"]:checked ~ .two{
         transform: rotate(-45deg);
         -webkit-transform: rotate(-45deg);
         -moz-transform: rotate(-45deg);
         -ms-transform: rotate(-45deg);
         -o-transform: rotate(-45deg);
-}
+        top: 1rem;
+    }
+    .navegation input[type="checkbox"]:checked ~ .two{
+        display: none;
+    }
     .navegation span{
         right: 0;
         display: block;
@@ -65,6 +76,7 @@ body{
         margin-right: 2rem;
         position: absolute;
         width: 2rem;
+        top: 0;
         height: 0.2rem;
         background: #ffffff;
         pointer-events: none;
@@ -73,18 +85,16 @@ body{
         -moz-transition: transform 0.5s ease-in;
         -ms-transition: transform 0.5s ease-in;
         -o-transition: transform 0.5s ease-in;
-}
+    }
     .navegation .one{
         margin-top: 1rem;
-        transform-origin: 50% 100%;
     }
     .navegation .two{
         margin-top: 1.8rem;
-        transform-origin: 0% 0%;
     }
     .manue {
         margin-top: 3rem;
-        display: none;
+        opacity: 0;
         text-align: center;
         width: 100%;
         position: absolute;
@@ -95,10 +105,17 @@ body{
         -moz-transition: all 0.5s ease-in;
         -ms-transition: all 0.5s ease-in;
         -o-transition: all 0.5s ease-in;
-}
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+    }
     .manue li{
         display: block;
         padding: 1rem 1rem;
+    }
+    li a:hover{
+        background: #3a55ad;
+        color: #fff;
+        padding: 0.4rem 1.3rem;
     }
 
 }
